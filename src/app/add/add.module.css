@@ -1,0 +1,142 @@
+.addPage {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 1.65rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 24px;
+}
+
+/* Info Callout Box resembling SO */
+.infoBox {
+  background-color: #ebf5fc;
+  border: 1px solid #a6d3f5;
+  border-radius: var(--radius-xs);
+  padding: 24px;
+  margin-bottom: 24px;
+  color: #3b4045;
+}
+
+.infoTitle {
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: #242729;
+  margin-bottom: 12px;
+}
+
+.infoText {
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+.infoList {
+  font-size: 0.825rem;
+  padding-left: 20px;
+  line-height: 1.5;
+}
+
+/* Card Section Form fields */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xs);
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.cardTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 4px;
+}
+
+.cardSubtitle {
+  font-size: 0.775rem;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.input, .select, .textarea {
+  width: 100%;
+  background-color: var(--surface);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-xs);
+  padding: 8px 10px;
+  font-size: 0.875rem;
+  color: var(--text);
+  margin-top: 6px;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.input:focus, .select:focus, .textarea:focus {
+  border-color: #59a6f3;
+  box-shadow: 0 0 0 4px rgba(0, 116, 204, 0.15);
+}
+
+.select {
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' fill='none'%3E%3Cpath stroke='%2364748b' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+  padding-right: 32px;
+}
+
+.textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.codeArea {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  min-height: 150px;
+  background-color: #fafafb;
+  color: #2f3337;
+}
+
+.groupRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.submitRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 12px;
+  padding-bottom: 24px;
+}
+
+.cancelLink {
+  color: #c22e32;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.cancelLink:hover {
+  color: #ac2428;
+  text-decoration: underline;
+}
+
+@media (max-width: 640px) {
+  .groupRow {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}

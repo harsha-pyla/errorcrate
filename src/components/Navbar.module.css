@@ -1,0 +1,320 @@
+.header {
+  height: var(--header-height);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: var(--surface);
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.navContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1264px;
+  height: 100%;
+  padding: 0 24px;
+}
+
+.leftSection {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.logoIcon {
+  color: var(--accent-orange);
+  font-size: 1.25rem;
+  transform: rotate(-10deg);
+  display: inline-block;
+}
+
+.logoText {
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.logoTextLight {
+  font-weight: 300;
+  color: var(--text-muted);
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navItem {
+  font-size: 0.825rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 6px 4px;
+  position: relative;
+  transition: color 0.2s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.navItem::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--accent-orange);
+  transform-origin: bottom right;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.navItem:hover {
+  color: var(--text-dark);
+}
+
+.navItem:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.searchContainer {
+  position: relative;
+  flex: 1;
+  margin: 0 20px;
+}
+
+.searchWrapper {
+  display: flex;
+  align-items: center;
+  background-color: var(--surface);
+  border: 1px solid var(--border-dark);
+  border-radius: var(--radius-sm);
+  padding: 6px 10px;
+  gap: 8px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.searchWrapper:focus-within {
+  border-color: var(--accent-orange);
+  box-shadow: 0 0 0 3px rgba(244, 130, 37, 0.15), 0 8px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+.searchIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+}
+
+.searchSvg {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+}
+
+.searchWrapper:focus-within .searchSvg {
+  color: var(--accent-orange);
+  transform: scale(1.2) rotate(6deg);
+}
+
+.searchInput {
+  flex: 1;
+  font-size: 0.825rem;
+  color: var(--text);
+  background: transparent;
+  transition: padding-left 0.25s ease;
+}
+
+.searchInput:focus {
+  padding-left: 2px;
+}
+
+.searchInput::placeholder {
+  color: #9fa6ad;
+}
+
+.shortcutHint {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background-color: var(--background);
+  border: 1px solid var(--border-dark);
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-family: inherit;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08), inset 0 1px 0 #fff;
+  transition: opacity 0.2s ease;
+}
+
+.searchWrapper:focus-within .shortcutHint {
+  opacity: 0.5;
+}
+
+/* Autocomplete suggestions */
+.suggestionsDropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.05);
+  max-height: 320px;
+  overflow-y: auto;
+  z-index: 200;
+  animation: slideUpFade 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.suggestionItem {
+  display: flex;
+  flex-direction: column;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  border-left: 3px solid transparent;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.suggestionItem:last-child {
+  border-bottom: none;
+}
+
+.suggestionItem:hover {
+  background-color: var(--surface-hover);
+  border-left-color: var(--accent-orange);
+  padding-left: 19px;
+}
+
+.suggestionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2px;
+}
+
+.suggestionName {
+  font-weight: 600;
+  font-size: 0.85rem;
+  color: #0074cc;
+}
+
+.suggestionCategory {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.suggestionDesc {
+  font-size: 0.775rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.noSuggestions {
+  padding: 14px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.825rem;
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.requestBtn {
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(135deg, #0a95ff 0%, #0077d6 100%);
+  color: #ffffff;
+  padding: 8px 14px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  white-space: nowrap;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 3px rgba(0, 119, 214, 0.25);
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.requestBtn:hover {
+  background: linear-gradient(135deg, #0077d6 0%, #005eb0 100%);
+  transform: translateY(-1px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 4px 10px rgba(0, 119, 214, 0.3);
+  color: #ffffff;
+}
+
+/* Mobile responsive */
+@media (max-width: 980px) {
+  .navContainer {
+    padding: 0 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navLinks {
+    display: none;
+  }
+  
+  .shortcutHint {
+    display: none;
+  }
+
+  .searchContainer {
+    margin: 0 8px;
+    flex: 1;
+  }
+
+  .searchInput {
+    font-size: 0.775rem;
+  }
+
+  .requestBtn {
+    padding: 7px 11px;
+    font-size: 0.775rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .logoText {
+    display: none; /* Hide brand text to preserve horizontal search space */
+  }
+
+  .searchContainer {
+    margin: 0 6px;
+  }
+}
+

@@ -1,0 +1,232 @@
+.sidebar {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* Common Section Widget Card */
+.widgetCard {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 18px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.widgetHeader {
+  font-size: 0.775rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #24292f;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+  margin-bottom: 2px;
+}
+
+/* 1. On This Page (TOC) list styles */
+.tocList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-left: 0;
+  margin: 0;
+}
+
+.tocLink {
+  color: #0074cc;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  background: transparent;
+  border: none;
+  padding: 0;
+  text-align: left;
+  display: inline-block;
+  transition: color 0.1s ease;
+}
+
+.tocLink:hover {
+  color: #0a95ff;
+  text-decoration: underline;
+}
+
+/* 2. Related Errors list styles */
+.relatedList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding-left: 0;
+  margin: 0;
+}
+
+.relatedItem {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.relatedLink {
+  color: #0074cc;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.1s ease;
+}
+
+.relatedLink:hover {
+  color: #0a95ff;
+  text-decoration: underline;
+}
+
+.relatedDesc {
+  color: #57606a;
+  font-size: 0.775rem;
+  line-height: 1.4;
+}
+
+/* 3. Official Resources list styles */
+.resourcesList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+  margin: 0;
+}
+
+.resourceItem {
+  border-bottom: 1px solid #f1f2f3;
+  padding: 10px 0;
+}
+
+.resourceItem:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.resourceItem:first-child {
+  padding-top: 0;
+}
+
+.resourceLink {
+  color: #0074cc;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-decoration: none;
+  transition: color 0.1s ease;
+}
+
+.resourceLink:hover {
+  color: #0a95ff;
+}
+
+.resourceIcon {
+  color: #838c95;
+  flex-shrink: 0;
+}
+
+/* The ErrorCrate Blog Widget */
+.blogWidget {
+  background-color: var(--surface);
+  border: 1px solid var(--border-dark);
+  border-top: 3px solid var(--accent-orange); /* SaaS Brand Accent Border */
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03), 0 1px 2px rgba(0, 0, 0, 0.02);
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+}
+
+.blogWidget:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+}
+
+.blogHeader {
+  background-color: var(--background);
+  border-bottom: 1px solid var(--border-dark);
+  padding: 12px 16px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-dark);
+  letter-spacing: 0.06em;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Tiny Glowing dot indicator for live blog status */
+.blogHeader::before {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent-orange);
+  box-shadow: 0 0 8px var(--accent-orange);
+}
+
+.blogList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.blogItem {
+  padding: 12px 16px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  line-height: 1.45;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.blogItem:not(:last-child) {
+  border-bottom: 1px solid var(--border);
+}
+
+.blogIcon {
+  color: #94a3b8; /* Steel slate color */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.2s ease, transform 0.2s ease;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.blogLink {
+  color: var(--text-dark);
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  font-weight: 500;
+}
+
+/* Combined Hover Effect: Hovering the list item highlights the icon and shifts text */
+.blogItem:hover {
+  background-color: var(--surface-hover);
+}
+
+.blogItem:hover .blogIcon {
+  color: var(--accent-orange);
+  transform: scale(1.15) rotate(-3deg);
+}
+
+.blogItem:hover .blogLink {
+  color: #0074cc;
+  transform: translateX(1px);
+}
+
+
