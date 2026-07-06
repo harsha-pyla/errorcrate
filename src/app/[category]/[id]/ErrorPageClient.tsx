@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { ErrorInfo, Category } from "@/types";
 import { supabase } from "@/lib/supabase";
+import SidebarRight from "@/components/SidebarRight";
 import styles from "./error.module.css";
 
 interface ErrorPageClientProps {
@@ -604,6 +605,12 @@ export default function ErrorPageClient({ error, category }: ErrorPageClientProp
         )}
 
       </div>
+
+      {/* Mobile Sidebar Widgets (Related Errors & Resources) */}
+      <div className={styles.mobileSidebarWidgets}>
+        <SidebarRight currentError={error} />
+      </div>
+
       {/* 7. Still having this problem CTA Section */}
       <div className={styles.optionsContainer}>
         <h3 className={styles.optionsTitle}>Still having this problem?</h3>

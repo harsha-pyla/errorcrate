@@ -128,7 +128,7 @@ export default function SidebarRight({ currentError }: SidebarRightProps) {
   return (
     <aside className={styles.sidebar}>
       {/* 1. ON THIS PAGE */}
-      <div className={styles.widgetCard}>
+      <div className={`${styles.widgetCard} ${styles.tocWidgetCard}`}>
         <div className={styles.widgetHeader}>On This Page</div>
         <ul className={styles.tocList}>
           <li>

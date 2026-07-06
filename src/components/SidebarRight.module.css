@@ -229,4 +229,10 @@
   transform: translateX(1px);
 }
 
+@media (max-width: 980px) {
+  .tocWidgetCard {
+    display: none !important;
+  }
+}
+
 

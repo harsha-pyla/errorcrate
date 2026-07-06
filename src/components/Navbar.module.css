@@ -277,6 +277,10 @@
   color: #ffffff;
 }
 
+.hamburgerBtn {
+  display: none;
+}
+
 /* Mobile responsive */
 @media (max-width: 980px) {
   .navContainer {
@@ -285,6 +289,25 @@
 }
 
 @media (max-width: 768px) {
+  .hamburgerBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 4px;
+    margin-right: 4px;
+    transition: all 0.2s ease;
+  }
+
+  .hamburgerBtn:hover {
+    background-color: var(--surface-hover);
+    color: var(--text-dark);
+  }
+
   .navLinks {
     display: none;
   }
@@ -316,5 +339,78 @@
   .searchContainer {
     margin: 0 6px;
   }
+}
+
+/* Mobile Navigation Drawer styles */
+.mobileDrawerOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(2px);
+  z-index: 999;
+}
+
+.mobileDrawerContent {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 280px;
+  background-color: var(--surface);
+  box-shadow: 4px 0 24px rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  animation: slideInDrawer 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.drawerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+  background-color: var(--background);
+}
+
+.drawerTitle {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text-dark);
+}
+
+.closeDrawerBtn {
+  background: none;
+  border: none;
+  font-size: 1.25rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--text-muted);
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+
+.closeDrawerBtn:hover {
+  background-color: var(--surface-hover);
+  color: var(--text-dark);
+}
+
+.drawerBody {
+  flex: 1;
+  overflow-y: auto;
+}
+
+/* Remove default border-right inside sidebar in drawer view */
+.drawerBody aside {
+  border-right: none !important;
+}
+
+@keyframes slideInDrawer {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
 }
 

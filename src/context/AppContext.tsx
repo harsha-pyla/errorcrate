@@ -21,6 +21,10 @@ interface AppContextType {
   // Requested errors states
   requests: ErrorRequest[];
   addRequest: (request: Omit<ErrorRequest, "id" | "requestedAt">) => string;
+
+  // Mobile navigation drawer toggle
+  mobileMenuOpen: boolean;
+  setMobileMenuOpen: (open: boolean) => void;
 }
 
 const AppContext = createContext<AppContextType | undefined>(undefined);
@@ -33,6 +37,9 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
   
   // Local state for requests
   const [requests, setRequests] = useState<ErrorRequest[]>([]);
+
+  // Mobile menu open state
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Force light mode
   useEffect(() => {
@@ -170,6 +177,8 @@ export function AppProvider({ children }: { children: React.ReactNode }) {
         addSolution,
         requests,
         addRequest,
+        mobileMenuOpen,
+        setMobileMenuOpen,
       }}
     >
       {children}

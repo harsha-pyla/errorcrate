@@ -2,12 +2,13 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import { useApp } from "@/context/AppContext";
+import SidebarLeft from "./SidebarLeft";
 import styles from "./Navbar.module.css";
 
 export default function Navbar() {
-  const { errors } = useApp();
+  const { errors, mobileMenuOpen, setMobileMenuOpen } = useApp();
   const [query, setQuery] = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -37,6 +38,12 @@ export default function Navbar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  // Close mobile drawer on route change
+  const pathname = usePathname();
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [pathname, setMobileMenuOpen]);
+
   const filteredErrors = query.trim()
     ? errors.filter(
         (err) =>
@@ -56,6 +63,27 @@ export default function Navbar() {
     <header className={styles.header}>
       <div className={styles.navContainer}>
         <div className={styles.leftSection}>
+          <button
+            className={styles.hamburgerBtn}
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label="Toggle Navigation Sidebar"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              {mobileMenuOpen ? (
+                <>
+                  <line x1="18" y1="6" x2="6" y2="18"></line>
+                  <line x1="6" y1="6" x2="18" y2="18"></line>
+                </>
+              ) : (
+                <>
+                  <line x1="3" y1="12" x2="21" y2="12"></line>
+                  <line x1="3" y1="6" x2="21" y2="6"></line>
+                  <line x1="3" y1="18" x2="21" y2="18"></line>
+                </>
+              )}
+            </svg>
+          </button>
+
           <Link href="/" className={styles.logo}>
             <span className={styles.logoIcon}>
               <svg width="28" height="31" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -139,6 +167,23 @@ export default function Navbar() {
           </Link>
         </div>
       </div>
+
+      {/* Mobile Drawer Navigation overlay */}
+      {mobileMenuOpen && (
+        <div className={styles.mobileDrawerOverlay} onClick={() => setMobileMenuOpen(false)}>
+          <div className={styles.mobileDrawerContent} onClick={(e) => e.stopPropagation()}>
+            <div className={styles.drawerHeader}>
+              <span className={styles.drawerTitle}>Navigation</span>
+              <button className={styles.closeDrawerBtn} onClick={() => setMobileMenuOpen(false)}>
+                ✕
+              </button>
+            </div>
+            <div className={styles.drawerBody}>
+              <SidebarLeft />
+            </div>
+          </div>
+        </div>
+      )}
     </header>
   );
 }
