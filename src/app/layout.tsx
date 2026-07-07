@@ -3,7 +3,7 @@ import Link from "next/link";
 import "./globals.css";
 import { AppProvider } from "@/context/AppContext";
 import Navbar from "@/components/Navbar";
-import SidebarLeft from "@/components/SidebarLeft";
+import PageContainer from "@/components/PageContainer";
 import MainLayoutWrapper from "@/components/MainLayoutWrapper";
 import styles from "./layout.module.css";
 
@@ -37,12 +37,9 @@ export default function RootLayout({
           <Navbar />
           
           {/* Centered Page Layout */}
-          <div className={styles.container}>
-            <div className={styles.sidebarLeft}>
-              <SidebarLeft />
-            </div>
+          <PageContainer>
             <MainLayoutWrapper>{children}</MainLayoutWrapper>
-          </div>
+          </PageContainer>
 
           {/* SaaS Styled Bottom Footer */}
           <footer className={styles.footer}>

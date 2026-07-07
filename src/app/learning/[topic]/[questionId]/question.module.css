@@ -1,0 +1,767 @@
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - var(--header-height) - 100px);
+  width: 100%;
+  padding: 32px;
+  background-color: var(--background);
+}
+
+.topBar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.backButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background-color: var(--surface);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.breadcrumb {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.breadcrumbLink {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.15s ease;
+  cursor: pointer;
+}
+
+.breadcrumbLink:hover {
+  color: #0074cc;
+}
+
+.breadcrumbSeparator {
+  color: #cbd5e1;
+}
+
+.breadcrumbActive {
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+.header {
+  margin-bottom: 32px;
+}
+
+.titleRow {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.pageTitle {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -0.02em;
+}
+
+.difficultyBadge {
+  font-size: 0.725rem;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.easy {
+  color: #16a34a;
+  background-color: #f0fdf4;
+  border: 1px solid rgba(22, 163, 74, 0.15);
+}
+
+.medium {
+  color: #d97706;
+  background-color: #fffbeb;
+  border: 1px solid rgba(217, 119, 6, 0.15);
+}
+
+.advanced {
+  color: #dc2626;
+  background-color: #fef2f2;
+  border: 1px solid rgba(220, 38, 38, 0.15);
+}
+
+.contentGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.stepsColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  max-width: 1100px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.stepCard {
+  background-color: var(--surface);
+  border: 1px solid var(--border-dark);
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+.storyCard {
+  background-color: #f8fafc;
+  border-left: 4px solid var(--accent-orange);
+  border-top: 1px solid var(--border-dark);
+  border-bottom: 1px solid var(--border-dark);
+  border-right: 1px solid var(--border-dark);
+}
+
+.storyTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1e293b;
+  margin-bottom: 8px;
+}
+
+.storyText {
+  font-size: 1.05rem;
+  color: #475569;
+  line-height: 1.5;
+  font-style: italic;
+}
+
+.stepHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 12px;
+}
+
+.stepBadge {
+  font-size: 0.675rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  background-color: var(--background);
+  color: var(--text-dark);
+  padding: 3px 8px;
+  border-radius: 4px;
+  border: 1px solid var(--border-dark);
+  letter-spacing: 0.05em;
+}
+
+.stepTitle {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.stepDesc {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.ioGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.ioBox {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 16px;
+  background-color: var(--background);
+  border: 1px solid var(--border-dark);
+  border-radius: 6px;
+}
+
+.ioLabel {
+  font-size: 0.725rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.ioCode {
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  color: var(--accent-orange);
+  font-weight: 600;
+}
+
+/* Step 2: Visual Thinking Chain */
+.thinkingChain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 0;
+}
+
+.chainNode {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+}
+
+.chainArrow {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin: 6px 0;
+}
+
+.nodeBox {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--background);
+  border: 1px solid var(--border-dark);
+  border-radius: 6px;
+  text-align: center;
+  font-weight: 600;
+  color: var(--text-dark);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+}
+
+/* Step 3 & 7 Text blocks */
+.explanationText, .eliText {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* Step 4: Execution Table */
+.tableWrapper {
+  width: 100%;
+  overflow-x: auto;
+  border: 1px solid var(--border-dark);
+  border-radius: 6px;
+}
+
+.executionTable {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.875rem;
+}
+
+.executionTable th {
+  background-color: var(--background);
+  padding: 12px 16px;
+  font-weight: 700;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.executionTable td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-dark);
+}
+
+.firstCell {
+  font-weight: 700;
+  color: var(--text-muted) !important;
+  background-color: var(--background);
+  width: 150px;
+}
+
+.highlightCell {
+  color: var(--accent-orange) !important;
+  font-weight: 600;
+  background-color: rgba(244, 128, 36, 0.02);
+}
+
+/* Step 5: Code Container */
+.codeContainer {
+  border: 1px solid var(--border-dark);
+  border-radius: 6px;
+  overflow: hidden;
+  background-color: #0f172a; /* premium deep slate code block */
+}
+
+.codeHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  background-color: #1e293b;
+  border-bottom: 1px solid #334155;
+}
+
+.codeLang {
+  color: #94a3b8;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.codeBody {
+  margin: 0;
+  padding: 16px;
+  overflow-x: auto;
+}
+
+.codePre {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #f1f5f9;
+}
+
+/* Step 6: Complexity and Visualizer styles */
+.complexityBlock {
+  background-color: var(--background);
+  border: 1px solid var(--border-dark);
+  border-radius: 6px;
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.complexityHeader {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.complexityGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 20px;
+}
+
+.complexityItem {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.complexityLabel {
+  font-size: 0.725rem;
+  color: var(--text-muted);
+}
+
+.complexityValue {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #dc2626; /* complexity alert color */
+}
+
+.complexityDesc {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* INTERACTIVE VISUALIZER */
+.visualizerContainer {
+  border: 1px solid var(--border-dark);
+  border-radius: 8px;
+  background-color: var(--surface);
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.visualizerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px;
+  background-color: var(--background);
+  border-bottom: 1px solid var(--border-dark);
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.visualizerTitle {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  letter-spacing: 0.02em;
+}
+
+.controlButtons {
+  display: flex;
+  gap: 8px;
+}
+
+.controlButtons button {
+  background-color: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-dark);
+  font-size: 0.775rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.controlButtons button:hover:not(:disabled) {
+  border-color: var(--border-dark);
+  background-color: var(--surface-hover);
+}
+
+.controlButtons button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.progressBar {
+  width: 100%;
+  height: 3px;
+  background-color: var(--border);
+}
+
+.progressFill {
+  height: 100%;
+  background-color: var(--accent-orange);
+  transition: width 0.25s ease;
+}
+
+.visualizerGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  min-height: 280px;
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.codeExecutionPane {
+  border-right: 1px solid var(--border-dark);
+  background-color: #0f172a;
+}
+
+.paneHeader {
+  font-size: 0.725rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #94a3b8;
+  padding: 8px 16px;
+  background-color: #1e293b;
+  border-bottom: 1px solid #334155;
+  letter-spacing: 0.05em;
+}
+
+.codeLines {
+  padding: 16px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.executionLine {
+  display: flex;
+  padding: 3px 0;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: #94a3b8;
+  position: relative;
+  transition: all 0.15s ease;
+}
+
+.activeLine {
+  background-color: rgba(244, 128, 36, 0.18);
+  color: #ffffff;
+}
+
+.activeLine::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background-color: var(--accent-orange);
+}
+
+.lineNumber {
+  width: 44px;
+  text-align: right;
+  padding-right: 16px;
+  opacity: 0.4;
+  user-select: none;
+}
+
+.lineContent {
+  flex: 1;
+  white-space: pre;
+}
+
+.inspectorPane {
+  background-color: var(--surface);
+  display: flex;
+  flex-direction: column;
+}
+
+.inspectorBlock {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.inspectorBlock:not(:last-child) {
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.variableGrid {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.variableRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.825rem;
+  font-family: var(--font-mono);
+  padding: 6px 12px;
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+.varName {
+  color: var(--text-dark);
+  font-weight: 700;
+}
+
+.varValue {
+  color: var(--accent-orange);
+  font-weight: 700;
+}
+
+.stackFrameList {
+  padding: 16px;
+  display: flex;
+  flex-direction: column-reverse; /* pushes active frames to top/bottom stack view */
+  gap: 8px;
+}
+
+.stackFrame {
+  background-color: #f1f5f9;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+}
+
+.stepExplanationBox {
+  padding: 16px 20px;
+  background-color: var(--background);
+  font-size: 0.9rem;
+  color: var(--text-dark);
+  line-height: 1.5;
+  border-top: 1px solid var(--border-dark);
+}
+
+/* Step 7: ELI10 & Common Mistakes */
+.eliTabs {
+  display: flex;
+  gap: 12px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 12px;
+  margin-bottom: 16px;
+}
+
+.eliTabBtn {
+  background: none;
+  border: none;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.eliTabBtn:hover {
+  background-color: var(--background);
+  color: var(--text-dark);
+}
+
+.eliActiveTab {
+  background-color: var(--accent-orange) !important;
+  color: #ffffff !important;
+}
+
+.eliContent {
+  background-color: var(--background);
+  padding: 16px;
+  border: 1px dashed var(--border-dark);
+  border-radius: 6px;
+  margin-bottom: 24px;
+}
+
+.mistakesSection {
+  margin-top: 32px;
+}
+
+.mistakesHeader {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.mistakeCard {
+  border: 1px solid var(--border-dark);
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.mistakeGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid var(--border-dark);
+}
+
+.wrongBox, .correctBox {
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+}
+
+.wrongBox {
+  border-right: 1px solid var(--border-dark);
+  background-color: #fffefb;
+}
+
+.correctBox {
+  background-color: #fafdfb;
+}
+
+.badgeWrong, .badgeCorrect {
+  font-size: 0.675rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 4px;
+  align-self: flex-start;
+  margin-bottom: 12px;
+}
+
+.badgeWrong {
+  background-color: #fef2f2;
+  color: #dc2626;
+  border: 1px solid rgba(220,38,38,0.1);
+}
+
+.badgeCorrect {
+  background-color: #f0fdf4;
+  color: #16a34a;
+  border: 1px solid rgba(22,163,74,0.1);
+}
+
+.mistakeCode {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--text-dark);
+  margin: 0;
+  white-space: pre-wrap;
+}
+
+.mistakeDetails {
+  padding: 16px;
+  background-color: var(--background);
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.extraGrid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.extraBlock {
+  background-color: var(--background);
+  border: 1px solid var(--border-dark);
+  border-radius: 6px;
+  padding: 20px;
+}
+
+.extraHeader {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+}
+
+.extraList {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.extraListItem {
+  font-size: 0.925rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .pageContainer {
+    padding: 16px;
+  }
+
+  .pageTitle {
+    font-size: 1.75rem;
+  }
+
+  .ioGrid, .complexityGrid, .visualizerGrid, .mistakeGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .wrongBox {
+    border-right: none;
+    border-bottom: 1px solid var(--border-dark);
+  }
+
+  .codeExecutionPane {
+    border-right: none;
+    border-bottom: 1px solid var(--border-dark);
+  }
+}
