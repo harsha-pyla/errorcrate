@@ -41,7 +41,9 @@
   color: var(--accent-orange);
   font-size: 1.25rem;
   transform: rotate(-10deg);
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .logoText {
@@ -290,16 +292,18 @@
 
 @media (max-width: 768px) {
   .hamburgerBtn {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
     background: none;
     border: none;
     color: var(--text-muted);
     cursor: pointer;
-    padding: 6px;
+    width: 36px;
+    height: 36px;
+    padding: 0;
     border-radius: 4px;
-    margin-right: 4px;
+    margin-right: 2px;
     transition: all 0.2s ease;
   }
 
@@ -317,12 +321,23 @@
   }
 
   .searchContainer {
-    margin: 0 8px;
+    margin: 0 4px;
     flex: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .searchWrapper {
+    height: 36px;
+    width: 100%;
+    padding: 0 10px;
+    align-items: center;
+    display: flex;
   }
 
   .searchInput {
     font-size: 0.775rem;
+    height: 100%;
   }
 
   .requestBtn {
@@ -336,8 +351,12 @@
     display: none; /* Hide brand text to preserve horizontal search space */
   }
 
+  .leftSection {
+    gap: 8px; /* Reduce gap on mobile screens */
+  }
+
   .searchContainer {
-    margin: 0 6px;
+    margin: 0 4px;
   }
 }
 

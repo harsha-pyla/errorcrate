@@ -218,25 +218,17 @@
 .questionsList {
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--border-dark);
-  border-radius: 6px;
-  overflow: hidden;
-  background-color: var(--surface);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  background: transparent;
 }
 
 .questionRow {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 24px;
+  padding: 18px 4px;
   text-decoration: none;
-  background-color: var(--surface);
+  background-color: transparent;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  border: none;
-}
-
-.questionRow:not(:last-child) {
   border-bottom: 1px solid var(--border-dark);
 }
 
