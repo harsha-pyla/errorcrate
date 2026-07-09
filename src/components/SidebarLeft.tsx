@@ -40,17 +40,6 @@ export default function SidebarLeft() {
             <span style={{ fontWeight: 600 }}>Home</span>
           </Link>
         </li>
-        <li>
-          <Link
-            href="/learning"
-            className={`${styles.navLink} ${
-              getIsActive("/learning") ? styles.activeLink : ""
-            }`}
-          >
-            <TechIcon name="learning" className={styles.icon} size={16} />
-            <span style={{ fontWeight: 600 }}>Learning</span>
-          </Link>
-        </li>
       </ul>
 
       {/* Categories header and list */}

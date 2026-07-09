@@ -142,7 +142,7 @@ export default function TermsOfServicePage() {
       <div className={styles.contactBox}>
         <h3 className={styles.contactTitle}>Legal Inquiries</h3>
         <p className={styles.contactText}>
-          For questions about these Terms of Service, please contact our legal team at <strong>harsha1029p@gmail.com</strong>.
+          For questions about these Terms of Service, please contact our legal team via our <a href="/contact" style={{ color: "#0074cc", textDecoration: "underline" }}>Contact Support</a> page.
         </p>
       </div>
     </div>

@@ -4,14 +4,14 @@ import Link from "next/link";
 import styles from "./page.module.css";
 
 export const metadata: Metadata = {
-  title: "About ErrorCrate — Developer Debugging Knowledge Platform",
+  title: "About ErrorCrate — Developer Error Resolution Platform",
   description:
-    "Learn about the ErrorCrate mission, engineering methodology, and the team behind the developer debugging encyclopedia. Discover how we build verified troubleshooting guides for 220+ programming errors.",
+    "Discover the ErrorCrate mission, methodology, and technology stack. Learn how we compile verified troubleshooting guides, root-cause breakdowns, and dynamic resolutions for 220+ system exceptions.",
   keywords: [
     "about errorcrate",
     "developer debugging platform",
     "programming error wiki",
-    "engineering team",
+    "error resolution database",
     "developer tools",
     "open source documentation",
   ],
@@ -20,150 +20,201 @@ export const metadata: Metadata = {
   },
   robots: { index: true, follow: true },
   openGraph: {
-    title: "About ErrorCrate — Developer Debugging Knowledge Platform",
-    description: "Learn about the ErrorCrate mission and the team behind the developer debugging encyclopedia.",
+    title: "About ErrorCrate — Developer Error Resolution Platform",
+    description: "Learn about the ErrorCrate mission and the team behind the developer error resolution encyclopedia.",
     url: "https://www.errorcrate.com/about",
     type: "website",
     siteName: "ErrorCrate",
   },
   twitter: {
     card: "summary",
-    title: "About ErrorCrate — Developer Debugging Knowledge Platform",
+    title: "About ErrorCrate — Developer Error Resolution Platform",
     description: "Learn about the mission, methodology, and team behind ErrorCrate.",
   },
 };
 
 export default function AboutPage() {
+  const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
+
   return (
     <div className={styles.container}>
-      <header className={styles.header}>
-        <span className={styles.badge}>Our Story</span>
-        <h1 className={styles.title}>About ErrorCrate</h1>
-        <p className={styles.subtitle}>
-          ErrorCrate is a free, open developer documentation platform built to eliminate hours of frustrating debugging by providing verified, structured, and rigorously tested troubleshooting guides for real-world programming errors.
+      {/* Pixel Art Hero Section */}
+      <section className={styles.heroSection}>
+        <div className={styles.heroLogo}>ERRORCRATE</div>
+        <h1 className={styles.heroTitle}>
+          ErrorCrate helps you resolve compiler errors &amp; runtime bugs instantly, solo.
+        </h1>
+        <p className={styles.heroSubtitle}>
+          A comprehensive developer database documenting mechanical root causes, verified code fixes, and system configuration resolutions.
         </p>
-      </header>
-
-      {/* Mission */}
-      <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>
-          <span>🎯</span> Our Mission
-        </h2>
-        <p className={styles.text}>
-          Every developer has experienced the frustration of encountering an opaque compiler error, a cryptic runtime exception, or a baffling infrastructure failure at 2 AM with a production deadline looming. Traditional search results often yield outdated forum posts, untested workarounds, and fragmented advice scattered across dozens of websites.
-        </p>
-        <p className={styles.text}>
-          ErrorCrate was built to solve this problem. Our mission is to create the most comprehensive, accurate, and developer-friendly error resolution encyclopedia on the internet. We believe that every programming error deserves a dedicated, well-researched guide that explains the root cause, provides a verified fix, and teaches defensive patterns to prevent recurrence.
-        </p>
-      </section>
-
-      {/* Platform Stats */}
-      <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>
-          <span>📊</span> Platform at a Glance
-        </h2>
-        <p className={styles.text}>
-          Since our launch, ErrorCrate has grown into a substantial knowledge repository serving developers across the globe.
-        </p>
-        <div className={styles.statsGrid}>
-          <div className={styles.statCard}>
-            <span className={styles.statNumber}>220+</span>
-            <span className={styles.statLabel}>Documented Errors</span>
-          </div>
-          <div className={styles.statCard}>
-            <span className={styles.statNumber}>10+</span>
-            <span className={styles.statLabel}>Technology Categories</span>
-          </div>
-          <div className={styles.statCard}>
-            <span className={styles.statNumber}>100%</span>
-            <span className={styles.statLabel}>Verified Solutions</span>
-          </div>
-          <div className={styles.statCard}>
-            <span className={styles.statNumber}>Free</span>
-            <span className={styles.statLabel}>Always & Forever</span>
-          </div>
+        <div className={styles.heroCtaGroup}>
+          <Link href="/wiki" className={styles.heroPrimaryBtn}>
+            Explore errors wiki &rarr;
+          </Link>
+          <Link href="/contact" className={styles.heroSecondaryLink}>
+            Contact support
+          </Link>
         </div>
       </section>
 
-      {/* Engineering Methodology */}
-      <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>
-          <span>⚙️</span> Engineering Methodology
-        </h2>
-        <p className={styles.text}>
-          Unlike conventional developer forums where answers are crowd-sourced with varying quality, ErrorCrate enforces a rigorous four-stage editorial pipeline for every error entry in our database:
-        </p>
-        <p className={styles.text}>
-          <strong>Stage 1 — Trace Isolation:</strong> We dissect stack traces to identify the exact abstraction layer where the failure originates, whether it is a lexical parsing error, heap memory exhaustion, socket timeout, or container orchestration fault.
-        </p>
-        <p className={styles.text}>
-          <strong>Stage 2 — Deterministic Reproduction:</strong> Every error is reproduced inside isolated container environments using minimal reproducible examples (MREs) to confirm the exact trigger conditions and eliminate environmental variables.
-        </p>
-        <p className={styles.text}>
-          <strong>Stage 3 — Architectural Remediation:</strong> We provide drop-in code solutions alongside detailed architectural explanations comparing the broken implementation pattern with the resilient alternative.
-        </p>
-        <p className={styles.text}>
-          <strong>Stage 4 — Defensive Safeguards:</strong> Each guide includes prevention strategies such as linting rules, CI/CD assertion patterns, and runtime monitoring configurations to prevent regression in production environments.
-        </p>
-      </section>
-
-      {/* Core Values */}
-      <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>
-          <span>💡</span> Core Values
-        </h2>
-        <div className={styles.valuesGrid}>
-          <div className={styles.valueCard}>
-            <div className={styles.valueIcon}>🔍</div>
-            <h3 className={styles.valueTitle}>Accuracy First</h3>
-            <p className={styles.valueText}>
-              Every code solution is tested against live compiler runtimes. We never publish untested workarounds or speculative fixes.
-            </p>
-          </div>
-          <div className={styles.valueCard}>
-            <div className={styles.valueIcon}>📖</div>
-            <h3 className={styles.valueTitle}>Clarity Over Brevity</h3>
-            <p className={styles.valueText}>
-              We prioritize thorough explanations of root causes over quick one-liner fixes. Understanding why an error occurs is as important as resolving it.
-            </p>
-          </div>
-          <div className={styles.valueCard}>
-            <div className={styles.valueIcon}>🌐</div>
-            <h3 className={styles.valueTitle}>Open & Free</h3>
-            <p className={styles.valueText}>
-              ErrorCrate is and will always remain free for every developer. No paywalls, no premium tiers, no gated content.
-            </p>
-          </div>
-          <div className={styles.valueCard}>
-            <div className={styles.valueIcon}>🔄</div>
-            <h3 className={styles.valueTitle}>Continuously Updated</h3>
-            <p className={styles.valueText}>
-              Our automated pipelines revalidate solutions against new framework releases weekly to ensure backward and forward compatibility.
-            </p>
-          </div>
+      {/* Categories Bar */}
+      <div className={styles.techCategoryBar}>
+        <div className={styles.techTabsList}>
+          <Link href="/wiki" className={`${styles.techTabItem} ${styles.techTabItemActive}`}>
+            All Categories
+          </Link>
+          <Link href="/wiki?q=python" className={styles.techTabItem}>
+            Python
+          </Link>
+          <Link href="/wiki?q=java" className={styles.techTabItem}>
+            Java
+          </Link>
+          <Link href="/wiki?q=docker" className={styles.techTabItem}>
+            Docker
+          </Link>
+          <Link href="/wiki?q=aws" className={styles.techTabItem}>
+            AWS Cloud
+          </Link>
         </div>
-      </section>
+      </div>
 
-      {/* Technology Stack */}
-      <section className={styles.section}>
-        <h2 className={styles.sectionTitle}>
-          <span>🛠️</span> Our Architecture
-        </h2>
-        <p className={styles.text}>
-          ErrorCrate is engineered using modern web architectures optimized for speed, search visibility, and ease of reading. The platform leverages static pre-rendering, ensuring every troubleshooting guide loads instantly with zero server lag, maximizing performance scores.
-        </p>
-        <p className={styles.text}>
-          Our error database is structured as typed compiler-validated data modules, enabling validation of all error entries, category relationships, and metadata fields. This architecture ensures that every guide published on the platform passes both runtime and static analysis verification.
-        </p>
-      </section>
-
-      {/* Contact */}
-      <div className={styles.contactBox}>
-        <h3 className={styles.contactTitle}>Get in Touch</h3>
-        <p className={styles.contactText}>
-          Have questions, feedback, or want to contribute to ErrorCrate? Reach out to us at <strong>harsha1029p@gmail.com</strong> or visit our <Link href="/contact" style={{ color: "var(--accent-orange)", fontWeight: 600 }}>Contact Support</Link> page.
+      {/* Central Diagram Showcase */}
+      <div className={styles.sectionTitleBlock}>
+        <h2 className={styles.sectionHeading}>Verified diagnostic database. Zero guesswork.</h2>
+        <p className={styles.sectionSubheading}>
+          Every error entry in our repository undergoes automated validation against standard compiler specifications.
         </p>
       </div>
+
+      <div className={styles.diagramContainer}>
+        {/* Connection Lines Svg */}
+        <svg className={styles.diagramSvg} viewBox="0 0 320 320">
+          <line x1="160" y1="160" x2="160" y2="48" stroke="#e2e8f0" strokeWidth="2" strokeDasharray="4 4" />
+          <line x1="160" y1="160" x2="272" y2="102" stroke="#e2e8f0" strokeWidth="2" strokeDasharray="4 4" />
+          <line x1="160" y1="160" x2="272" y2="222" stroke="#e2e8f0" strokeWidth="2" strokeDasharray="4 4" />
+          <line x1="160" y1="160" x2="160" y2="278" stroke="#e2e8f0" strokeWidth="2" strokeDasharray="4 4" />
+          <line x1="160" y1="160" x2="48" y2="222" stroke="#e2e8f0" strokeWidth="2" strokeDasharray="4 4" />
+          <line x1="160" y1="160" x2="48" y2="102" stroke="#e2e8f0" strokeWidth="2" strokeDasharray="4 4" />
+        </svg>
+
+        {/* Center Node */}
+        <div className={styles.centerNode}>
+          Errors Wiki
+          <br />
+          Database
+        </div>
+
+        {/* Outer Nodes */}
+        <div className={styles.outerNode} style={{ top: "10px", left: "122px" }}>
+          <span className={styles.nodeIcon}>🐍</span>
+          <span>Python</span>
+        </div>
+        <div className={styles.outerNode} style={{ top: "64px", left: "234px" }}>
+          <span className={styles.nodeIcon}>☕</span>
+          <span>Java</span>
+        </div>
+        <div className={styles.outerNode} style={{ top: "184px", left: "234px" }}>
+          <span className={styles.nodeIcon}>📦</span>
+          <span>Docker</span>
+        </div>
+        <div className={styles.outerNode} style={{ top: "240px", left: "122px" }}>
+          <span className={styles.nodeIcon}>⚡</span>
+          <span>NodeJS</span>
+        </div>
+        <div className={styles.outerNode} style={{ top: "184px", left: "10px" }}>
+          <span className={styles.nodeIcon}>☁️</span>
+          <span>AWS Cloud</span>
+        </div>
+        <div className={styles.outerNode} style={{ top: "64px", left: "10px" }}>
+          <span className={styles.nodeIcon}>🌐</span>
+          <span>HTTP Codes</span>
+        </div>
+      </div>
+
+      {/* Feature Rows (Mockup layouts matching main error resolution theme) */}
+      <div className={styles.featuresWrapper}>
+        {/* Feature 1: Main Product */}
+        <div className={styles.featureRow}>
+          <div className={styles.featureDescCol}>
+            <div className={styles.featureFolderIcon}>📁</div>
+            <h3 className={styles.featureTitle}>Instant Error Resolution</h3>
+            <p className={styles.featureText}>
+              Find precise diagnostic guides for compiler exceptions, dependency conflicts, and runtime faults. Search 220+ verified resolutions globally to get back to writing code.
+            </p>
+            <Link href="/wiki" className={styles.featureMetaLink}>
+              Search database &rarr;
+            </Link>
+          </div>
+          <div className={styles.mockupContainer}>
+            <div style={{ padding: "8px 12px", border: "1px solid var(--border-dark)", borderRadius: "6px", backgroundColor: "var(--background)", display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
+              <span style={{ fontSize: "0.85rem", color: "var(--text-muted)" }}>Search: NullPointerException</span>
+              <span style={{ fontSize: "0.8rem", color: "#a1a1aa" }}>Ctrl + /</span>
+            </div>
+            <div style={{ display: "flex", flexDirection: "column", gap: "8px" }}>
+              <div style={{ padding: "10px 14px", background: "#f0fdf4", borderRadius: "6px", fontSize: "0.85rem", border: "1px solid #bbf7d0", color: "#16a34a", fontWeight: 700 }}>
+                ✓ Root Cause Identified: Attempting to invoke method on uninitialized reference
+              </div>
+              <div style={{ padding: "10px 14px", background: "var(--background)", borderRadius: "6px", fontSize: "0.85rem", border: "1px solid var(--border-dark)", display: "flex", justifyContent: "space-between" }}>
+                <span>Fix: Initialize wrapper object before referencing properties</span>
+                <span style={{ color: "var(--accent-orange)", fontWeight: 700 }}>Java</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Feature 2: Badges (Reverse) */}
+        <div className={`${styles.featureRow} ${styles.reverse}`}>
+          <div className={styles.mockupContainer} style={{ borderStyle: "dashed" }}>
+            <div className={styles.mockupBadgesRow}>
+              <span className={`${styles.mockupBadge} ${styles.highlight}`}>CPython v3.12</span>
+              <span className={styles.mockupBadge}>AWS CLI v2</span>
+              <span className={`${styles.mockupBadge} ${styles.highlight}`}>Docker v26</span>
+              <span className={styles.mockupBadge}>GCC v13.2</span>
+              <span className={styles.mockupBadge}>JDK 21</span>
+              <span className={`${styles.mockupBadge} ${styles.highlight}`}>Kubectl v1.30</span>
+            </div>
+            <p style={{ fontSize: "0.8rem", color: "var(--text-muted)", margin: "16px 0 0 0", fontStyle: "italic" }}>
+              *All error resolutions compiled and checked against upstream compiler specifications.
+            </p>
+          </div>
+          <div className={styles.featureDescCol}>
+            <div className={styles.featureFolderIcon}>📁</div>
+            <h3 className={styles.featureTitle}>Tested Environment Trust Badges</h3>
+            <p className={styles.featureText}>
+              Every solution guide is compiled and checked against upstream runtimes. We badge the exact software versions so you write patches that fit.
+            </p>
+            <Link href="/wiki" className={styles.featureMetaLink}>
+              View tested runtimes &rarr;
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* Alphabetical Index Directory (Matches Cofounder) */}
+      <div className={styles.directorySection}>
+        <span className={styles.directoryLabel}>Search exceptions alphabetically</span>
+        <div className={styles.directoryGrid}>
+          {alphabet.map((letter) => (
+            <Link key={letter} href={`/wiki?q=${letter.toLowerCase()}`} className={styles.directoryLetter}>
+              {letter}
+            </Link>
+          ))}
+        </div>
+      </div>
+
+      {/* Pixel Art Footer Call To Action */}
+      <section className={styles.footerCtaSection}>
+        <h2 className={styles.footerCtaTitle}>Write inherently resilient systems.</h2>
+        <div className={styles.footerCtaCard}>
+          <span className={styles.footerCardTitle}>Request exception walkthroughs</span>
+          <p className={styles.footerCardText}>
+            Stuck on an opaque compiler diagnostic or AWS policy block? Submit the code signature to our engineering queue, and our diagnostic compilers will trace it.
+          </p>
+          <Link href="/contact" className={styles.footerCardBtn}>
+            Contact support &rarr;
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }

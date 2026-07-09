@@ -147,7 +147,7 @@ export default function PrivacyPolicyPage() {
       <div className={styles.contactBox}>
         <h3 className={styles.contactTitle}>Privacy Inquiries</h3>
         <p className={styles.contactText}>
-          If you have questions about this Privacy Policy or wish to exercise your data rights, please contact our Data Protection team at <strong>harsha1029p@gmail.com</strong>.
+          If you have questions about this Privacy Policy or wish to exercise your data rights, please contact our Data Protection team via our <a href="/contact" style={{ color: "#0074cc", textDecoration: "underline" }}>Contact Support</a> page.
         </p>
       </div>
     </div>

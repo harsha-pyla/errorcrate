@@ -108,9 +108,6 @@ export default function RootLayout({
                       <Link href="/wiki" style={{ color: "inherit", textDecoration: "none" }}>Errors Wiki</Link>
                     </li>
                     <li className={styles.linkItem}>
-                      <Link href="/" style={{ color: "inherit", textDecoration: "none" }}>Categories</Link>
-                    </li>
-                    <li className={styles.linkItem}>
                       <Link href="/request" style={{ color: "inherit", textDecoration: "none" }}>Request Error</Link>
                     </li>
                     <li className={styles.linkItem}>
@@ -132,7 +129,38 @@ export default function RootLayout({
                   </ul>
                 </div>
 
-                {/* Column 3 */}
+                {/* Column 3: Tools */}
+                <div className={styles.footerCol}>
+                  <span className={styles.colTitle}>Tools</span>
+                  <ul className={styles.linkList}>
+                    <li className={styles.linkItem}>
+                      <Link href="/tools/json-formatter" style={{ color: "inherit", textDecoration: "none" }}>JSON Formatter</Link>
+                    </li>
+                    <li className={styles.linkItem}>
+                      <Link href="/tools/jwt-decoder" style={{ color: "inherit", textDecoration: "none" }}>JWT Decoder</Link>
+                    </li>
+                    <li className={styles.linkItem}>
+                      <Link href="/tools/regex-tester" style={{ color: "inherit", textDecoration: "none" }}>Regex Tester</Link>
+                    </li>
+                    <li className={styles.linkItem}>
+                      <Link href="/tools/uuid-generator" style={{ color: "inherit", textDecoration: "none" }}>UUID Generator</Link>
+                    </li>
+                    <li className={styles.linkItem}>
+                      <Link href="/tools/sql-formatter" style={{ color: "inherit", textDecoration: "none" }}>SQL Formatter</Link>
+                    </li>
+                    <li className={styles.linkItem}>
+                      <Link href="/tools/yaml-validator" style={{ color: "inherit", textDecoration: "none" }}>YAML Validator</Link>
+                    </li>
+                    <li className={styles.linkItem}>
+                      <Link href="/tools/cron-builder" style={{ color: "inherit", textDecoration: "none" }}>Cron Builder</Link>
+                    </li>
+                    <li className={styles.linkItem}>
+                      <Link href="/tools/timestamp-converter" style={{ color: "inherit", textDecoration: "none" }}>Timestamp Converter</Link>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Column 4 */}
                 <div className={styles.footerCol}>
                   <span className={styles.colTitle}>Company</span>
                   <ul className={styles.linkList}>

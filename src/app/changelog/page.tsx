@@ -61,69 +61,63 @@ export default function ChangelogPage() {
 
       {/* Release Timeline */}
       <div className={styles.timeline}>
-        {/* Release v1.0.0 */}
+        {/* Release v1.1.0 */}
         <article className={styles.releaseCard}>
           <div className={styles.releaseHeader}>
             <div className={styles.versionGroup}>
-              <span className={styles.versionTag}>v1.0.0</span>
-              <span className={styles.latestBadge}>Initial Launch</span>
+              <span className={styles.versionTag}>v1.1.0</span>
+              <span className={styles.latestBadge}>Current Release</span>
             </div>
-            <span className={styles.releaseDate}>July 4, 2026</span>
+            <span className={styles.releaseDate}>July 9, 2026</span>
           </div>
           <p className={styles.releaseSummary}>
-            Core platform launch of ErrorCrate — a free, open-source developer debugging encyclopedia featuring over 220+ verified troubleshooting guides across 10 technology categories, dynamic search, interactive code syntax diagnostics, trust badges, and cloud-connected user submission workflows.
+            Major release introducing the full-width SaaS landing About page, alphabetical index search directory lookups, responsive mockup highlights, and mobile alignment improvements.
           </p>
 
           <div className={styles.changeSection}>
             <div className={`${styles.changeHeading} ${styles.added}`}>
-              <span>✨</span> Core Features & Additions
+              <span>✨</span> New Features & Additions
             </div>
             <ul className={styles.changeList}>
               <li className={styles.changeItem}>
-                <strong>220+ Verified Debugging Guides:</strong> Compiled a database of detailed troubleshooting articles spanning HTTP status codes, Node.js, JavaScript, React, Docker, Git, Linux, Python, Kubernetes, and AWS.
+                <strong>SaaS About Page Redesign:</strong> Completely overhauled the About page to replicate the high-end pixel-art backdrop look of cofounder.co with interactive circular connection diagrams and visual CSS mockup boxes.
               </li>
               <li className={styles.changeItem}>
-                <strong>Instant Keyboard Search:</strong> Integrated a dynamic diagnostic search box with automated keyword matches, accessible globally via the <code>Ctrl + /</code> keyboard shortcut.
+                <strong>Alphabetical Directory Index:</strong> Integrated a full A-Z directory lookup grid on the About page to navigate straight to search filters in the Error resolution database.
               </li>
               <li className={styles.changeItem}>
-                <strong>Tested Environment Trust Badges:</strong> Displayed explicit tools and version details (e.g. <code>AWS CLI v2</code>, <code>Kubectl v1.30</code>, <code>CPython v3.12</code>) that verify guide solutions against live runtimes.
-              </li>
-              <li className={styles.changeItem}>
-                <strong>Secure Cloud Database:</strong> Connected platform forms directly to our cloud database storage to dynamically log contact inquiries, new error requests, and solution improvement clicks.
-              </li>
-              <li className={styles.changeItem}>
-                <strong>Live JavaScript Syntax Finder:</strong> Implemented a parser playground on JS syntax error guides to let developers paste and validate syntax instantly.
+                <strong>Unified Full-Width Mode:</strong> Disabled the left sidebar on the About route to let the SaaS landing layout span the entire browser viewport width.
               </li>
             </ul>
           </div>
 
           <div className={styles.changeSection}>
             <div className={`${styles.changeHeading} ${styles.improved}`}>
-              <span>⚡</span> Performance & Architectural Improvements
+              <span>⚡</span> Performance, Security & Layout Improvements
             </div>
             <ul className={styles.changeList}>
               <li className={styles.changeItem}>
-                <strong>Static Page Generation:</strong> Engineered with pre-rendered pages to load wiki and support pages with sub-second speeds and optimal search crawler performance.
+                <strong>Privacy Email Redirection:</strong> Removed raw mailto strings from Privacy, Terms, Cookies, and About pages, replacing them with contact form links.
               </li>
               <li className={styles.changeItem}>
-                <strong>Unified Reading Layouts:</strong> Configured full-width combined grid wrappers for help, cookies, terms, privacy, about, wiki, and changelog routes.
+                <strong>Sitemap & Footer Cleanups:</strong> Optimized sitemap generation indices and footer link groups to focus strictly on the wiki error resolution entries.
               </li>
               <li className={styles.changeItem}>
-                <strong>Advanced Metadata Pipe:</strong> Optimized SEO headers, viewport directives, canonical URLs, and Open Graph tags across all pages to meet strict Google AdSense approval benchmarks.
+                <strong>Mobile Navbar Center Alignment:</strong> Realigned the mobile hamburger icon, logo warning triangle, and search container onto a unified vertical centerline.
               </li>
             </ul>
           </div>
 
           <div className={styles.changeSection}>
             <div className={`${styles.changeHeading} ${styles.fixed}`}>
-              <span>🛠️</span> Stability & Navigation
+              <span>🛠️</span> Visual Polish & Divider Layouts
             </div>
             <ul className={styles.changeList}>
               <li className={styles.changeItem}>
-                <strong>Safe Hydration Keys:</strong> Deployed composite keys across dashboard loops to resolve React warning flags.
+                <strong>Borderless Horizontal Divider Grid:</strong> Removed the card box borders, shadows, and backgrounds around lobby questions lists, replacing them with clean separator lines.
               </li>
               <li className={styles.changeItem}>
-                <strong>Smart Related Links Fallbacks:</strong> Engineered dynamic filtering to guarantee exactly 5 related error recommendations are populated on every page sidebar.
+                <strong>Viewport Containment:</strong> Added code execution horizontal scrolls to ensure preformatted text fits correctly on compact mobile screens.
               </li>
             </ul>
           </div>

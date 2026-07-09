@@ -7,11 +7,11 @@ import styles from "@/app/layout.module.css";
 
 export default function PageContainer({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const isLearningPage = pathname === "/learning" || pathname.startsWith("/learning/");
+  const isFullWidthPage = pathname === "/about" || pathname === "/tools" || pathname.startsWith("/tools/");
 
   return (
     <div className={styles.container}>
-      {!isLearningPage && (
+      {!isFullWidthPage && (
         <div className={styles.sidebarLeft}>
           <SidebarLeft />
         </div>

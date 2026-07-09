@@ -1,7 +1,6 @@
 import { MetadataRoute } from "next";
 import { errorsData } from "@/data/errors";
 import { categories } from "@/data/categories";
-import { learningQuestions } from "@/data/learning";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = "https://www.errorcrate.com";
@@ -15,12 +14,20 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     "/wiki",
     "/changelog",
     "/request",
-    "/learning",
     "/blog",
     "/blog/http-status-codes-explained",
     "/blog/common-nodejs-errors",
     "/blog/common-aws-errors",
     "/blog/docker-errors-and-fixes",
+    "/tools",
+    "/tools/json-formatter",
+    "/tools/jwt-decoder",
+    "/tools/regex-tester",
+    "/tools/uuid-generator",
+    "/tools/sql-formatter",
+    "/tools/yaml-validator",
+    "/tools/cron-builder",
+    "/tools/timestamp-converter",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
@@ -44,13 +51,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
-  // Learning details routes
-  const learningRoutes = learningQuestions.map((q) => ({
-    url: `${baseUrl}/learning/${q.topic}/${q.id}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: 0.7,
-  }));
-
-  return [...staticRoutes, ...categoryRoutes, ...errorRoutes, ...learningRoutes];
+  return [...staticRoutes, ...categoryRoutes, ...errorRoutes];
 }
